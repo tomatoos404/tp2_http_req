@@ -9,6 +9,7 @@ app.get('/message_get', (req, res) => {
   res.send('Bonjour mes poulets');
 });
 
+app.use(bodyParser.json()); // décode le body d'une requêtes
 
 app.post('/message_post', (req, res) => {
   const donneesDuCorps = req.body;
@@ -24,7 +25,6 @@ app.listen(port, () => {
 });
 
 //middleware 
-app.use(bodyParser.json()); // décode le body d'une requête
 
 
 // Gestionnaire d'erreurs global
